@@ -110,15 +110,14 @@ document.getElementById('apply-btn').addEventListener('click', function(){
         allTotalPrice.innerText = twoDigits;
     }
     else{
-        alert('please enter a valid coupon')
+        alert('please enter a valid coupon');
     }
     inputField.value = '';
 })
 
 document.getElementById('apply-input').addEventListener('input', 
         function (){
-            const applybtn = document.getElementById('apply-btn')
-            const inputField = document.getElementById('apply-input');
+            const applybtn = document.getElementById('apply-btn');
             
         const totalPrice = document.getElementById('total-price');
         const totalPriceString = totalPrice.innerText;
@@ -127,7 +126,7 @@ document.getElementById('apply-input').addEventListener('input',
                 applybtn.removeAttribute('disabled');
             }
             else{
-                applybtn.setAttribute('disabled', true)
+                applybtn.setAttribute('disabled', true);
             }
         })
 
@@ -138,11 +137,40 @@ document.addEventListener('click',
         const totalPrice = document.getElementById('total-price');
         const totalPriceString = totalPrice.innerText;
         const total = parseFloat(totalPriceString);
-
         if(total > 0){
-            makePurchase.removeAttribute('disabled');
+            makePurchase.removeAttribute('disabled');    
         }else{
             makePurchase.setAttribute('disabled', true);
+            
+        }
+})
+document.addEventListener('click', 
+    function(){
+        const applybtn = document.getElementById('apply-btn');
+
+        const totalPrice = document.getElementById('total-price');
+        const totalPriceString = totalPrice.innerText;
+        const total = parseFloat(totalPriceString);
+        if(total >= 200){
+            applybtn.removeAttribute('disabled');    
+        }else{
+            applybtn.setAttribute('disabled', true);
+            
+        }
+})
+document.getElementById('apply-btn').addEventListener('click', 
+    function(){
+        const applybtn = document.getElementById('apply-btn');
+
+        const totalPrice = document.getElementById('total-price');
+        const totalPriceString = totalPrice.innerText;
+        const total = parseFloat(totalPriceString);
+        if(total >= 200){
+            applybtn.removeAttribute('disabled');
+            
+        }else{
+            applybtn.setAttribute('disabled', true);
+            
         }
 })
 
